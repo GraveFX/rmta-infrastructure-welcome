@@ -12,6 +12,9 @@ import { useEffect, type ReactNode } from "react";
 
 import appCss from "../styles.css?url";
 import { reportLovableError } from "../lib/lovable-error-reporting";
+import { Header } from "@/components/site/Header";
+import { Footer, WhatsAppFloat } from "@/components/site/Footer";
+import { WelcomeScreen } from "@/components/site/WelcomeScreen";
 
 function NotFoundComponent() {
   return (
@@ -73,27 +76,45 @@ function ErrorComponent({ error, reset }: ErrorComponentProps) {
   );
 }
 
+const ORG_JSONLD = {
+  "@context": "https://schema.org",
+  "@type": "Organization",
+  name: "RMTA Infrastructure",
+  alternateName: "রম্য ইনফ্রাস্ট্রাকচার",
+  email: "rmtainfra@gmail.com",
+  telephone: "+91 8900060001",
+  address: {
+    "@type": "PostalAddress",
+    streetAddress: "56, MM Ghosh St",
+    addressLocality: "Krishnanagar",
+    addressRegion: "West Bengal",
+    postalCode: "741101",
+    addressCountry: "IN",
+  },
+};
+
 export const Route = createRootRouteWithContext<{ queryClient: QueryClient }>()({
   head: () => ({
     meta: [
       { charSet: "utf-8" },
       { name: "viewport", content: "width=device-width, initial-scale=1" },
-      { title: "Lovable App" },
-      { name: "description", content: "Lovable Generated Project" },
-      { name: "author", content: "Lovable" },
-      { property: "og:title", content: "Lovable App" },
-      { property: "og:description", content: "Lovable Generated Project" },
+      { title: "RMTA Infrastructure" },
+      { name: "description", content: "RMTA Infrastructure — engineering, infrastructure, IT and property in Krishnanagar, West Bengal." },
       { property: "og:type", content: "website" },
+      { property: "og:site_name", content: "RMTA Infrastructure" },
       { name: "twitter:card", content: "summary_large_image" },
-      { name: "twitter:site", content: "@Lovable" },
     ],
     links: [
+      { rel: "preconnect", href: "https://fonts.googleapis.com" },
+      { rel: "preconnect", href: "https://fonts.gstatic.com", crossOrigin: "anonymous" },
       {
         rel: "stylesheet",
-        href: appCss,
+        href: "https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;500&family=Manrope:wght@400;500;600;700&family=Sora:wght@500;600;700&display=swap",
       },
-      { rel: "icon", href: "/favicon.ico", type: "image/x-icon" },
+      { rel: "stylesheet", href: appCss },
+      { rel: "icon", type: "image/png", href: "/favicon.png" },
     ],
+    scripts: [{ type: "application/ld+json", children: JSON.stringify(ORG_JSONLD) }],
   }),
   shellComponent: RootShell,
   component: RootComponent,
@@ -120,8 +141,13 @@ function RootComponent() {
 
   return (
     <QueryClientProvider client={queryClient}>
-      {/* Required: nested routes render here. Removing <Outlet /> breaks all child routes. */}
-      <Outlet />
+      <WelcomeScreen />
+      <Header />
+      <main>
+        <Outlet />
+      </main>
+      <Footer />
+      <WhatsAppFloat />
     </QueryClientProvider>
   );
 }
