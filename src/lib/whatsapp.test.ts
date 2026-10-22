@@ -8,7 +8,7 @@ describe("whatsapp", () => {
   it("encodes service messages", () => {
     const url = serviceWhatsappUrl("civil");
     expect(url.startsWith("https://wa.me/918900060001?text=")).toBe(true);
-    expect(decodeURIComponent(url.split("text=")[1])).toContain("Civil Engineering and Infrastructure");
+    expect(decodeURIComponent(url.split("text=")[1] ?? "")).toContain("Civil Engineering and Infrastructure");
   });
   it("includes form values in the enquiry", () => {
     const m = enquiryMessage({ name: "Asha", phone: "98300", service: "property", details: "Plot near station" });

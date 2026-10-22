@@ -8,3 +8,5 @@
 > Commits you push to the connected branch sync back to Lovable and show up in
 > the editor, so keep the branch in a working state.
 <!-- LOVABLE:END -->
+
+- All enquiry links go through src/lib/whatsapp.ts; company facts and service content live in src/lib/site.ts — single source so numbers/copy never drift.

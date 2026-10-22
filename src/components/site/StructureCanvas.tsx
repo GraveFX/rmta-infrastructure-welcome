@@ -43,7 +43,7 @@ export function StructureCanvas({ className }: { className?: string }) {
     resize();
     window.addEventListener("resize", resize);
     window.addEventListener("pointermove", onMove, { passive: true });
-    const io = new IntersectionObserver(([e]) => { visible = e.isIntersecting; });
+    const io = new IntersectionObserver(([e]) => { visible = !!e?.isIntersecting; });
     io.observe(c);
 
     const draw = () => {
@@ -62,7 +62,8 @@ export function StructureCanvas({ className }: { className?: string }) {
         });
         for (const [a, b, ci] of edges) {
           const pa = proj[a], pb = proj[b];
-          ctx.strokeStyle = ci < 0 ? "rgba(245,246,247,0.35)" : colors[ci];
+          if (!pa || !pb) continue;
+          ctx.strokeStyle = ci < 0 ? "rgba(245,246,247,0.35)" : (colors[ci] ?? "#ffffff");
           ctx.globalAlpha = ci < 0 ? 1 : 0.55 * pa[2];
           ctx.lineWidth = (ci < 0 ? 1 : 1.5) * Math.min(window.devicePixelRatio, 2);
           ctx.beginPath(); ctx.moveTo(pa[0], pa[1]); ctx.lineTo(pb[0], pb[1]); ctx.stroke();

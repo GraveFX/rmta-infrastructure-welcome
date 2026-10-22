@@ -1,5 +1,5 @@
 import { createFileRoute } from "@tanstack/react-router";
-import { About, CtaBand, Hero, Process, Projects, Services, Values } from "@/components/site/Sections";
+import { About, Hero, Process, Projects, Services, Values } from "@/components/site/Sections";
 import { ContactSection } from "@/components/site/ContactSection";
 
 export const Route = createFileRoute("/")({
@@ -30,5 +30,3 @@ function Index() {
     </>
   );
 }
-
-export { CtaBand };
