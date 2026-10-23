@@ -16,7 +16,7 @@ export function Hero() {
       <StructureCanvas className="absolute right-0 top-1/2 hidden h-[70vh] w-[45vw] -translate-y-1/2 lg:block" />
       <div className="container-site relative pb-20 pt-40 md:pb-28">
         <p className="eyebrow reveal mb-8 flex items-center gap-3 text-ink-muted">
-          <span className="brand-rule inline-block w-10" /> Krishnanagar · Nadia · West Bengal
+          <span className="brand-rule inline-block w-10" /> RMTA INFRASTRUCTURE
         </p>
         <h1 className="reveal max-w-4xl text-5xl font-semibold leading-[0.98] sm:text-7xl lg:text-8xl [animation-delay:120ms]">
           Building the Foundations of <span className="text-brand-gradient">Tomorrow.</span>
