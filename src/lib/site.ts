@@ -17,9 +17,21 @@ export const COMPANY = {
     postalCode: "741101",
     country: "India",
   },
+  registeredAddress: {
+    street: "19, Bowbazar West lane",
+    locality: "Krishnanagar-I",
+    district: "Nadia",
+    region: "West Bengal",
+    postalCode: "741101",
+    country: "India",
+  },
 };
 
-export const ADDRESS_LINE = `${COMPANY.address.street}, ${COMPANY.address.locality}, ${COMPANY.address.district}, ${COMPANY.address.region} ${COMPANY.address.postalCode}`;
+const addressLine = (a: typeof COMPANY.address) => `${a.street}, ${a.locality}, ${a.district}, ${a.region} ${a.postalCode}`;
+
+export const ADDRESS_LINE = addressLine(COMPANY.address);
+export const REGISTERED_ADDRESS_LINE = addressLine(COMPANY.registeredAddress);
+
 
 export interface Service {
   key: Exclude<ServiceKey, "general">;

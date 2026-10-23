@@ -1,6 +1,6 @@
 import { useState, type FormEvent } from "react";
 import { Mail, MapPin, Phone } from "lucide-react";
-import { ADDRESS_LINE, COMPANY } from "@/lib/site";
+import { ADDRESS_LINE, COMPANY, REGISTERED_ADDRESS_LINE } from "@/lib/site";
 import { enquiryMessage, SERVICE_LABELS, whatsappUrl, WHATSAPP_DISPLAY, type ServiceKey } from "@/lib/whatsapp";
 import { btn, ExternalLink, SectionHead, WhatsAppIcon } from "./ui";
 
@@ -43,6 +43,7 @@ export function ContactSection() {
             <li className="flex gap-4"><Phone className="mt-1 h-5 w-5 text-muted-foreground" /><div><p className="eyebrow text-muted-foreground">Phone / WhatsApp</p><ExternalLink href={whatsappUrl()} className="text-lg hover:underline">{WHATSAPP_DISPLAY}</ExternalLink></div></li>
             <li className="flex gap-4"><Mail className="mt-1 h-5 w-5 text-muted-foreground" /><div><p className="eyebrow text-muted-foreground">Email</p><a href={`mailto:${COMPANY.email}`} className="text-lg hover:underline">{COMPANY.email}</a></div></li>
             <li className="flex gap-4"><MapPin className="mt-1 h-5 w-5 text-muted-foreground" /><div><p className="eyebrow text-muted-foreground">Office</p><p className="text-lg">{ADDRESS_LINE}</p></div></li>
+            <li className="flex gap-4"><MapPin className="mt-1 h-5 w-5 text-muted-foreground" /><div><p className="eyebrow text-muted-foreground">Registered Office</p><p className="text-lg">{REGISTERED_ADDRESS_LINE}</p></div></li>
           </ul>
         </div>
         <form onSubmit={submit} noValidate className="rounded-lg border bg-card p-6 shadow-lift md:col-span-7 md:p-10">
