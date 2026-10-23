@@ -1,6 +1,6 @@
 import { Link } from "@tanstack/react-router";
 import logo from "@/assets/rmta-logo.png.asset.json";
-import { ADDRESS_LINE, COMPANY, SERVICES } from "@/lib/site";
+import { ADDRESS_LINE, COMPANY, REGISTERED_ADDRESS_LINE, SERVICES } from "@/lib/site";
 import { serviceWhatsappUrl, whatsappUrl, SERVICE_MESSAGES, WHATSAPP_DISPLAY } from "@/lib/whatsapp";
 import { NAV } from "./Header";
 import { btn, ExternalLink, WhatsAppIcon } from "./ui";
@@ -36,6 +36,8 @@ export function Footer() {
         <address className="not-italic md:col-span-3">
           <p className="eyebrow mb-5 text-ink-muted">Office</p>
           <p className="text-ink-muted">{ADDRESS_LINE}</p>
+          <p className="eyebrow mb-2 mt-5 text-ink-muted">Registered Office</p>
+          <p className="text-ink-muted">{REGISTERED_ADDRESS_LINE}</p>
           <p className="mt-4"><ExternalLink href={whatsappUrl()} className="hover:text-ink-muted">{WHATSAPP_DISPLAY}</ExternalLink></p>
           <p className="mt-1"><a href={`mailto:${COMPANY.email}`} className="hover:text-ink-muted">{COMPANY.email}</a></p>
         </address>
