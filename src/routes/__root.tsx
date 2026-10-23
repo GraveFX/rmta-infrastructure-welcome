@@ -14,7 +14,6 @@ import appCss from "../styles.css?url";
 import { reportLovableError } from "../lib/lovable-error-reporting";
 import { Header } from "@/components/site/Header";
 import { Footer, WhatsAppFloat } from "@/components/site/Footer";
-import { WelcomeScreen } from "@/components/site/WelcomeScreen";
 
 function NotFoundComponent() {
   return (
@@ -141,7 +140,6 @@ function RootComponent() {
 
   return (
     <QueryClientProvider client={queryClient}>
-      <WelcomeScreen />
       <Header />
       <main>
         <Outlet />
