@@ -37,7 +37,7 @@ export function Header() {
     >
       <div className="container-site flex h-20 items-center justify-between">
         <Link to="/" aria-label="RMTA Infrastructure home" className="px-2 py-1 transition-colors">
-          <img src={logo.url} alt="RMTA" className="h-10 w-auto" width={72} height={40} />
+          <img src={logo.url} alt="RMTA" className="h-12 w-auto" width={86} height={48} />
         </Link>
         <nav aria-label="Main" className="hidden items-center gap-1 lg:flex">
           {NAV.map((n) => (
