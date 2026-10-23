@@ -35,9 +35,9 @@ export function Header() {
         overHero ? "bg-transparent" : "border-b bg-background/90 backdrop-blur-md",
       )}
     >
-      <div className="container-site flex h-20 items-center justify-between">
+      <div className="container-site flex h-24 items-center justify-between">
         <Link to="/" aria-label="RMTA Infrastructure home" className="px-2 py-1 transition-colors">
-          <img src={logo.url} alt="RMTA" className="h-12 w-auto" width={86} height={48} />
+          <img src={logo.url} alt="RMTA" className="h-16 w-auto" width={115} height={64} />
         </Link>
         <nav aria-label="Main" className="hidden items-center gap-1 lg:flex">
           {NAV.map((n) => (
