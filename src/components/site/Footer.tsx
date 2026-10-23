@@ -11,7 +11,7 @@ export function Footer() {
       <div className="brand-rule" />
       <div className="container-site grid gap-12 py-20 md:grid-cols-12">
         <div className="md:col-span-4">
-          <img src={logo.url} alt="RMTA" className="h-10 w-auto" loading="lazy" width={150} height={40} />
+          <img src={logo.url} alt="RMTA" className="h-10 w-auto" loading="lazy" width={72} height={40} />
           <p className="mt-6 max-w-sm text-ink-muted">
             RMTA Infrastructure, Krishnanagar. Civil engineering and infrastructure, IT and technology projects, and property dealing.
           </p>
